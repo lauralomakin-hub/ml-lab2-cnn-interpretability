@@ -63,6 +63,23 @@ def run_example(image_path, json_path="data/imagenet_class_index.json", target_l
 
     return prediction_info
     
+def print_top_logits(image_path, json_path="data/imagenet_class_index.json", top_k=5):
+    # Load and preprocess the image
+    img, input_tensor = load_image(image_path)
 
+    # Run the model without creating an attribution map
+    with torch.no_grad():
+        out = model(input_tensor.unsqueeze(0))
+
+    logits = out.squeeze(0)
+    top_values, top_indices = torch.topk(logits, top_k)
+
+    with open(json_path, "r") as f:
+        class_mapping = json.load(f)
+
+    print(f"Top {top_k} logits")
+    for value, index in zip(top_values, top_indices):
+        class_name = class_mapping[str(index.item())][1]
+        print(class_name, value.item())
 
     

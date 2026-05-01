@@ -1,44 +1,76 @@
-# ml-lab2-cnn-interpretability
-CNN interpretability project using Class Activation Maps (CAM) to visualize what image classification models focus on.
+Absolut. Här är en kort och enkel README du kan använda:
 
+````markdown
+# CNN Interpretability with Attribution Maps
 
-## ShouOuts for photos:
+This project is part of Assignment 2 in the Machine Learning course.
 
-Photo by Peri Stojnic on Unsplash:
-https://unsplash.com/photos/white-long-coat-small-dog-5Vr_RVPfbMI
+The purpose of the project is to explore how a pretrained image classification model makes predictions and how attribution maps can be used to interpret the result.
 
-Photo by Ray Hennessy:
-https://unsplash.com/photos/brown-fox-on-snow-field-xUUZcpQlqpM
+## Project description
 
-Photo by Joshua katt on Unsplash:
-https://unsplash.com/photos/a-shiba-inu-dog-stands-on-a-wall-outdoors-w7IaYtDPC2s
-      
-Photo by Alex Saks on Unsplash:
-https://unsplash.com/photos/a-german-shepherd-stands-alert-in-a-dry-grassy-field-yKC_-GlUd5s
+The project uses a pretrained ResNet18 model from TorchVision. The model is trained on ImageNet and is used to classify different images.
 
-Photo by Wild Spirit on Unsplash:
-https://unsplash.com/photos/a-wolf-standing-on-a-dirt-road-next-to-a-tree-tu0w6gucz_k
-      
-Photo by Paul Bill: 
-https://www.pexels.com/sv-se/foto/natur-stenar-skog-trad-27850143/
+LayerCAM is used to create attribution maps. These maps show which parts of the image the model focuses on when making a prediction.
 
-Photo by iddea photo: 
-https://www.pexels.com/sv-se/foto/siberian-husky-gar-i-snoigt-landskap-29505006/
+## What the project includes
 
-Photo by Mohan Nannapaneni:
-https://www.pexels.com/photo/husky-on-a-field-covered-with-snow-16683113/
+- Image classification with ResNet18
+- Mapping ImageNet class indexes to class names
+- Positive and negative examples
+- Logits and confidence values
+- Attribution maps with LayerCAM
+- A comparison between different layers in the model
 
+## Files
 
-Photo by Saleh  Bakhshiyev: 
-https://www.pexels.com/sv-se/foto/natur-pals-tittar-rav-19919361/
+```text
+data/
+  images/
+  imagenet_class_index.json
 
-photo by Jesús Esteban San José: 
-https://www.pexels.com/sv-se/foto/lobo-varg-27745897/
+notebooks/
+  attribution_maps.ipynb
 
-Photo:
-Red wolf, Bartel, B/USFWS, Public Domain, https://www.fws.gov/media/red-wolf-6
+src/
+  Python files used in the project
 
-Photo by Anton Atanasov: 
-https://www.pexels.com/sv-se/foto/djur-hund-husdjur-sot-17887473/
+report.md
+README.md
+pyproject.toml
+````
 
-Photo by Ludovic Delot: https://www.pexels.com/sv-se/foto/chihuahua-i-koppel-utomhusportratt-33489758/
+## How to run the project
+
+Install the dependencies:
+
+```bash
+uv sync
+```
+
+Start Jupyter Notebook:
+
+```bash
+uv run jupyter notebook
+```
+
+Then open the notebook and run the cells.
+
+## Report
+
+The main analysis is written in:
+
+```text
+report.md
+```
+
+The report contains the results, examples, attribution maps and discussion.
+
+## Notes
+
+The pretrained model is not trained further in this project. It is only used for prediction and interpretation.
+
+Images used in the report are credited in the report.
+
+```
+```
