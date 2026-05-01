@@ -35,7 +35,7 @@ notebooks/
 src/
   Python files used in the project
 
-report.md
+report.ipynb
 README.md
 pyproject.toml
 ````
